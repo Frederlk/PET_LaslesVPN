@@ -1,3 +1,616 @@
-//====================================================================================================
+//===================================================================================================================================
+.start {
+    @include adaptiveValue("margin-bottom", 100, 60, 1140, 767.98, 1);
+    &__container {
+    }
+    &__row {
+        margin: 0px rem(-20);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @media (max-width: $pc) {
+            margin: 0px rem(-10);
+        }
+        @media (max-width: $mobile) {
+            flex-wrap: wrap;
+            justify-content: center;
+            text-align: center;
+        }
+    }
 
-//====================================================================================================
+    &__column {
+        padding: 0px rem(20);
+        flex: 0 1 50%;
+        &:last-child {
+            flex: 1 1 50%;
+            @media (min-width: em(1290)) {
+                margin-right: rem(-60);
+            }
+        }
+        @media (max-width: $pc) {
+            padding: 0px rem(10);
+        }
+        @media (max-width: $mobile) {
+            flex: 1 1 100%;
+            &:first-child {
+                order: 2;
+            }
+        }
+    }
+
+    &__title {
+        font-weight: 500;
+        @include adaptiveValue("font-size", 50, 30, 1140, 991.98, 1);
+        line-height: math.div(70, 50);
+        color: $dark;
+        @include adaptiveValue("margin-bottom", 20, 10, 1140, 991.98, 1);
+        span {
+            font-weight: 700;
+        }
+        @media (max-width: $mobile) {
+            margin: rem(20) 0px;
+        }
+    }
+
+    &__text {
+        @include adaptiveValue("margin-bottom", 45, 20, 1140, 991.98, 1);
+    }
+
+    &__btn {
+    }
+
+    &__image {
+        img {
+            max-width: 100%;
+        }
+    }
+}
+//</ОСНОВНОЙ БЛОК>====================================================================================================
+
+.users {
+    @include adaptiveValue("margin-bottom", 100, 60, 1140, 767.98, 1);
+    &__container {
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            width: 80%;
+            height: 20%;
+            bottom: 0;
+            transform: translate(-50%, 0px);
+            left: 50%;
+            border-radius: rem(10);
+            box-shadow: 0 rem(10) rem(110) hsla(233, 48%, 10%, 0.2);
+        }
+    }
+
+    &__row {
+        position: relative;
+        z-index: 2;
+        background-color: $white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: rem(40) 0px;
+        @media (max-width: $tablet) {
+            padding: rem(20) 0px;
+        }
+        @media (max-width: $mobileSmall) {
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__column {
+        flex: 0 1 33.333%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: rem(30) 0px;
+        &:not(:last-child) {
+            border-right: rem(2) solid $light_02;
+        }
+        @media (max-width: $tablet) {
+            padding: rem(20);
+        }
+        @media (max-width: $mobile) {
+            display: block;
+            text-align: center;
+            padding: rem(20) rem(10);
+        }
+        @media (max-width: $mobileSmall) {
+            flex: 0 1 50%;
+            border: none;
+            padding: rem(10);
+        }
+    }
+
+    &__icon {
+        flex: 0 0 rem(55);
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        height: rem(55);
+        font-size: rem(24);
+        border-radius: 50%;
+        background-color: $light_03;
+        @media (max-width: $mobile) {
+            margin-bottom: rem(10);
+            height: rem(40);
+            width: rem(40);
+            font-size: rem(18);
+        }
+    }
+
+    &__info {
+        @media (min-width: $mobile) {
+            @include adaptiveValue("margin-left", 36, 20, 1140, 991.98, 1);
+        }
+    }
+
+    &__number {
+        font-weight: bold;
+        font-size: rem(25);
+        @include adaptiveValue("font-size", 25, 20, 1140, 767.98, 1);
+        line-height: math.div(30, 25);
+        color: $dark;
+        @media (min-width: $mobile) {
+            margin-bottom: rem(5);
+        }
+    }
+
+    &__text {
+        @include adaptiveValue("font-size", 20, 18, 1140, 767.98, 1);
+        line-height: math.div(30, 20);
+    }
+}
+
+//========================================================================================================================================================
+
+.features {
+    @include adaptiveValue("margin-bottom", 130, 40, 1170, 479.98, 1);
+    &__container {
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        @media (max-width: $tablet) {
+            align-items: center;
+        }
+        @media (max-width: $mobile) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+
+    &__column {
+        flex: 0 1 50%;
+        @media (min-width: $tablet) {
+            &:last-child {
+                flex: 0 1 rem(430);
+            }
+        }
+        @media (max-width: $mobile) {
+            flex: 1 1 100%;
+            text-align: center;
+        }
+        @media (max-width: $mobile) {
+            &:first-child {
+                margin-bottom: rem(40);
+            }
+        }
+    }
+
+    &__image {
+        padding: 0px rem(30);
+        img {
+            max-width: 100%;
+        }
+    }
+
+    &__title {
+        margin-bottom: rem(20);
+    }
+
+    &__subtitle {
+        margin-bottom: rem(20);
+    }
+
+    &__list {
+    }
+
+    &__item {
+        margin-bottom: rem(15);
+        display: flex;
+        align-items: center;
+        &::before {
+            margin-right: rem(10);
+        }
+        @media (max-width: $mobile) {
+            justify-content: center;
+        }
+    }
+}
+
+//========================================================================================================================================================
+
+.plan {
+    @include adaptiveValue("margin-bottom", 110, 10, 1140, 767.98, 1);
+    @include adaptiveValue("padding-top", 80, 40, 1140, 767.98, 1);
+    &__container {
+        text-align: center;
+    }
+
+    &__title {
+        margin: 0 auto rem(20) auto;
+        max-width: rem(400);
+    }
+
+    &__text {
+        margin: 0 auto rem(20) auto;
+        max-width: rem(555);
+    }
+
+    &__items {
+    }
+}
+.items-plan {
+    display: flex;
+    justify-content: center;
+    @include adaptiveValue("padding-top", 40, 20, 1140, 991.98, 1);
+    @media (max-width: $mobile) {
+        flex-wrap: wrap;
+    }
+    &__item {
+        @include adaptiveValue("margin-right", 25, 10, 1140, 767.98, 1);
+        @include adaptiveValue("margin-left", 25, 10, 1140, 767.98, 1);
+        margin-bottom: rem(40);
+        @include adaptiveValue("padding-top", 80, 40, 1140, 991.98, 1);
+        @include adaptiveValue("padding-right", 67, 20, 1140, 991.98, 1);
+        @include adaptiveValue("padding-bottom", 50, 40, 1140, 991.98, 1);
+        @include adaptiveValue("padding-left", 67, 20, 1140, 991.98, 1);
+        flex: 0 1 33.333%;
+        background-color: $white;
+        border-radius: rem(10);
+        border: rem(2) solid $light_04;
+        @media (max-width: $mobile) {
+            flex: 0 1 rem(370);
+        }
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    &__image {
+        @include adaptiveValue("margin-bottom", 30, 20, 1140, 991.98, 1);
+        img {
+            max-width: 100%;
+            min-height: rem(167);
+            object-fit: cover;
+        }
+    }
+
+    &__body {
+        flex: 1 1 auto;
+    }
+
+    &__subtitle {
+        @include adaptiveValue("margin-bottom", 30, 15, 1140, 991.98, 1);
+    }
+
+    &__list {
+        @include adaptiveValue("margin-bottom", 50, 20, 1140, 991.98, 1);
+        li {
+            display: flex;
+            align-items: center;
+            margin-bottom: rem(10);
+            @media (max-width: $mobile) {
+                justify-content: center;
+            }
+        }
+    }
+
+    &__text {
+        &::before {
+            @include adaptiveValue("margin-right", 20, 5, 1140, 991.98, 1);
+            font-size: rem(24);
+        }
+    }
+
+    &__footer {
+    }
+
+    &__price {
+        font-weight: 500;
+        font-size: rem(25);
+        line-height: math.div(30, 25);
+        margin-bottom: rem(20);
+        color: $dark;
+        span {
+            color: $gray_01;
+            font-weight: 400;
+        }
+    }
+
+    &__btn {
+    }
+}
+//========================================================================================================================================================
+
+.global {
+    text-align: center;
+    @media (max-width: $mobile) {
+        margin-bottom: rem(10);
+    }
+    &__container {
+    }
+
+    &__top {
+        @include adaptiveValue("margin-bottom", 110, 20, 1140, 479.98, 1);
+    }
+
+    &__title {
+        max-width: rem(400);
+        margin: 0 auto rem(20) auto;
+    }
+
+    &__subtitle {
+        margin: 0 auto;
+        max-width: rem(555);
+    }
+
+    &__image {
+        @include adaptiveValue("padding", 40, 20, 1140, 767.98, 1);
+        @media (max-width: $mobileSmall) {
+            padding: 0;
+        }
+        img {
+            max-width: 100%;
+        }
+    }
+}
+
+//========================================================================================================================================================
+
+.partners {
+    margin-bottom: rem(301);
+    &__container {
+    }
+
+    &__row {
+        display: flex;
+        margin: 0px rem(-10);
+        @media (max-width: $mobile) {
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+    }
+
+    &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 0 1 20%;
+        padding: 0px rem(10);
+        margin-bottom: rem(20);
+        @include adaptiveValue("height", 210, 80, 1140, 479.98, 1);
+        @media (max-width: $mobile) {
+            flex: 0 1 33.333%;
+            margin: 0px;
+        }
+        @media (max-width: $mobileSmall) {
+            flex: 0 1 50%;
+        }
+        img {
+            max-width: 100%;
+        }
+    }
+}
+//========================================================================================================================================================
+
+.testimonials {
+    margin-bottom: rem(180);
+    @media (max-width: $pc) {
+        margin-bottom: rem(160);
+    }
+    @media (max-width: em(390)) {
+        margin-bottom: rem(200);
+    }
+    &__container {
+        overflow: hidden;
+    }
+
+    &__title {
+        text-align: center;
+        max-width: rem(400);
+        margin: 0 auto rem(20) auto;
+    }
+
+    &__text {
+        text-align: center;
+        margin: 0 auto;
+        max-width: rem(555);
+    }
+
+    &__slider {
+        display: flex;
+        margin: rem(60) rem(-25);
+        @media (max-width: $pc) {
+            margin: rem(50) rem(-15);
+        }
+        @media (max-width: $tablet) {
+            margin: rem(40) rem(-15);
+        }
+    }
+
+    &__slide {
+        padding: 0px rem(25);
+        @media (max-width: $pc) {
+            padding: 0px rem(15);
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        align-items: center;
+    }
+
+    &__pagination {
+        flex: 1 1 auto;
+    }
+
+    &__navigation {
+        display: flex;
+    }
+
+    &__navigation-arrow {
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: rem(20);
+        flex: 0 1 50%;
+        width: rem(60);
+        height: rem(60);
+        background-color: $white;
+        border-radius: 50%;
+        border: rem(2) solid $primary;
+        transition: all 0.8s ease 0s;
+        box-shadow: 0 0 rem(15) rgba(0, 0, 0, 0.02);
+        @media (max-width: $mobile) {
+            width: rem(50);
+            height: rem(40);
+            font-size: rem(18);
+        }
+        &::before {
+            transition: all 0.8s ease 0s;
+            color: $primary;
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $primary;
+                &::before {
+                    color: $white;
+                }
+            }
+        }
+        &:not(:first-child) {
+            margin-left: rem(20);
+        }
+        &_prev {
+            transform: rotate(-180deg);
+        }
+    }
+    .swiper-slide-active {
+        .slide-testimonials__content {
+            border: rem(2) solid $primary;
+            box-shadow: rem(0) rem(20) rem(40) rgba(0, 0, 0, 0.05);
+        }
+    }
+}
+.slide-testimonials {
+    &__content {
+        display: flex;
+        transition: all 0.3s ease 0s;
+        flex-direction: column;
+        height: 100%;
+        background-color: $white;
+        border: rem(2) solid $light_04;
+        border-radius: rem(10);
+        padding: rem(30);
+    }
+    &__row {
+        display: flex;
+        align-items: center;
+        margin-bottom: rem(20);
+    }
+
+    &__avatar {
+        flex: 0 0 rem(50);
+        img {
+            max-width: 100%;
+        }
+    }
+
+    &__name {
+        flex: 1 1 auto;
+        margin-left: rem(20);
+        span {
+            display: block;
+            font-size: rem(14);
+            font-weight: 400;
+            color: $gray_01;
+        }
+    }
+
+    &__star {
+        align-items: center;
+        display: flex;
+        flex-direction: row-reverse;
+        &::before {
+            margin-top: rem(-3);
+            margin-left: rem(10);
+        }
+    }
+
+    &__body {
+        flex: 1 1 auto;
+    }
+}
+//========================================================================================================================================================
+
+.subscribe {
+    position: absolute;
+    bottom: rem(-117.5);
+    width: 100%;
+    @media (max-width: em(390)) {
+        bottom: rem(-177.5);
+    }
+    &__container {
+    }
+    &__content {
+        height: rem(235);
+        box-shadow: 0 rem(40) rem(40) rgba(0, 0, 0, 0.05);
+        background-color: $white;
+        padding: rem(20) rem(45);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @media (max-width: $tablet) {
+            padding: rem(20);
+        }
+        @media (max-width: $mobile) {
+            text-align: center;
+            flex-wrap: wrap;
+        }
+        @media (max-width: em(390)) {
+            height: rem(355);
+        }
+    }
+
+    &__column {
+        padding: 0px rem(25);
+        margin: rem(10) 0px;
+        @media (max-width: $tablet) {
+            padding: 0px rem(10);
+        }
+        @media (max-width: $mobile) {
+            flex: 1 1 100%;
+        }
+    }
+
+    &__title {
+        margin-bottom: rem(10);
+    }
+
+    &__text {
+    }
+
+    &__btn {
+        margin-top: rem(-10);
+    }
+}

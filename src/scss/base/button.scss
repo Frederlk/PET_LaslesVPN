@@ -1,0 +1,90 @@
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: rem(13);
+    min-width: rem(150);
+    height: rem(45);
+    font-size: rem(16);
+    font-weight: 500;
+    line-height: math.div(19, 16);
+    color: $primary;
+    border: rem(1) solid $primary;
+    border-radius: rem(50);
+    background-color: $white;
+    transition: color 0.5s ease 0s, background-color 0.5s ease 0s;
+    position: relative;
+    &::after {
+        content: "";
+        opacity: 0;
+        transition: opacity 0.5s ease 0s;
+        position: absolute;
+        width: 80%;
+        height: 80%;
+        bottom: 0;
+        transform: translate(-50%, 0px);
+        left: 50%;
+        box-shadow: 0 rem(20) rem(40) rgba(245, 56, 84, 0.3);
+    }
+    @media (any-hover: hover) {
+        &:hover {
+            background-color: $primary;
+            color: $white;
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+    @media (max-width: $mobile) {
+        font-size: rem(20);
+    }
+    &_w {
+        min-width: rem(180);
+    }
+}
+
+.btn-flat {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $primary;
+    border: rem(2) solid $primary;
+    padding: rem(18);
+    min-width: rem(250);
+    height: rem(60);
+    @include adaptiveValue("height", 60, 45, 1140, 767.98, 1);
+    border-radius: rem(10);
+    color: $white;
+    font-weight: 700;
+    font-size: rem(16);
+    line-height: math.div(25, 16);
+    position: relative;
+    transition: color 0.5s ease 0s, background-color 0.5s ease 0s;
+    &::after {
+        content: "";
+        opacity: 1;
+        transition: opacity 0.5s ease 0s;
+        position: absolute;
+        width: 80%;
+        height: 80%;
+        bottom: 0;
+        transform: translate(-50%, 0px);
+        left: 50%;
+        box-shadow: 0 rem(20) rem(40) rgba(245, 56, 84, 0.3);
+    }
+    @media (any-hover: hover) {
+        &:hover {
+            background-color: $white;
+            color: $primary;
+            &::after {
+                opacity: 0;
+            }
+        }
+    }
+    @media (max-width: $mobile) {
+        font-size: rem(20);
+    }
+    @media (max-width: $mobileSmall) {
+        display: flex;
+    }
+}

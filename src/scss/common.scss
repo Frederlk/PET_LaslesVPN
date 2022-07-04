@@ -1,1 +1,54 @@
 // Заголовки, общие БЄМ блоки и проче...
+.title {
+    font-weight: 500;
+    line-height: math.div(50, 35);
+    @include adaptiveValue("font-size", 35, 30, 1140, 767.98, 1);
+    color: $dark;
+}
+.text {
+    font-size: rem(16);
+    line-height: math.div(30, 16);
+    &_sm {
+        font-size: rem(14);
+    }
+}
+
+.subtitle {
+    font-weight: 500;
+    font-size: rem(18);
+    line-height: math.div(30, 18);
+    color: $dark;
+}
+
+.gradient {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(250, 250, 250, 1) 100%);
+}
+
+//========================================================================================================================================================
+
+.swiper-pagination-bullets {
+    display: flex;
+    gap: rem(15);
+    .swiper-pagination-bullet {
+        cursor: pointer;
+        width: rem(15);
+        height: rem(15);
+        background-color: $light_01;
+        border-radius: 50%;
+        transition: all 0.8s ease 0s;
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $primary;
+            }
+        }
+    }
+
+    .swiper-pagination-bullet-active {
+        width: rem(45);
+        border-radius: rem(15);
+        background-color: $primary;
+        @media (max-width: $mobile) {
+            width: rem(35);
+        }
+    }
+}

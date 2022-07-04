@@ -1,16 +1,57 @@
 %ic {
-	font-family: "icons";
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+    font-family: "icons";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 [class*="_icon-"] {
-	&:before {
-		@extend %ic;
-		display: block;
-	}
+    &:before {
+        @extend %ic;
+        display: block;
+    }
+}
+
+._icon-vector:before {
+    content: "\e909";
+    color: #2fab73;
+}
+._icon-star:before {
+    content: "\e900";
+    color: #fea250;
+}
+._icon-server:before {
+    content: "\e901";
+    color: #f53838;
+}
+._icon-person:before {
+    content: "\e902";
+    color: #f53838;
+}
+._icon-location:before {
+    content: "\e903";
+    color: #f53838;
+}
+._icon-tick:before {
+    content: "\e904";
+    color: #2fab73;
+}
+._icon-social-inst:before {
+    content: "\e905";
+    color: #fff;
+}
+._icon-social-tweet:before {
+    content: "\e906";
+    color: #fff;
+}
+._icon-social-fb:before {
+    content: "\e907";
+    color: #fff;
+}
+._icon-arrow:before {
+    content: "\e908";
+    color: #fff;
 }

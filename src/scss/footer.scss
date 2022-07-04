@@ -1,3 +1,130 @@
-//====================================================================================================
+.footer {
+    background-color: #f8f8f8;
+    padding-top: rem(180);
+    padding-bottom: rem(100);
+    @media (max-width: em(390)) {
+        padding-top: rem(220);
+    }
+    &__container {
+        display: flex;
+        @media (max-width: $mobile) {
+            flex-wrap: wrap;
+        }
+    }
 
-//====================================================================================================
+    &__column {
+        flex: 0 1 50%;
+        @media (max-width: $mobile) {
+            flex: 1 1 100%;
+        }
+    }
+
+    &__info {
+    }
+
+    &__links {
+    }
+}
+.info-footer {
+    @media (max-width: $mobile) {
+        text-align: center;
+        margin-bottom: rem(40);
+    }
+    &__logo {
+        display: inline-flex;
+        max-width: rem(112);
+        margin-bottom: rem(20);
+        @media (max-width: $mobile) {
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    &__text {
+        max-width: rem(340);
+        margin-bottom: rem(30);
+        @media (max-width: $mobile) {
+            margin: 0px auto rem(30) auto;
+        }
+    }
+
+    &__socials {
+        margin-bottom: rem(30);
+    }
+
+    &__social-item {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: rem(30);
+        height: rem(30);
+        border-radius: 50%;
+        background-color: $primary;
+        transition: all 0.8s ease 0s;
+        box-shadow: 0 rem(10) rem(20) rgba(0, 0, 0, 0.2);
+        &:not(:last-child) {
+            margin-bottom: rem(20);
+        }
+        &::before {
+            transition: all 0.8s ease 0s;
+            font-size: rem(33);
+            border-radius: 50%;
+            width: rem(33);
+            height: rem(33);
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $white;
+                &::before {
+                    color: $primary;
+                }
+            }
+        }
+    }
+
+    &__copy {
+    }
+}
+.links-footer {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px rem(-10);
+    @media (max-width: $mobile) {
+        text-align: center;
+    }
+    @media (max-width: $mobileSmall) {
+        flex-wrap: wrap;
+    }
+    &__item {
+        padding: 0px rem(10);
+        flex: 0 1 33.333%;
+        @media (max-width: $mobileSmall) {
+            flex: 1 1 100%;
+            &:not(:last-child) {
+                margin-bottom: rem(20);
+            }
+        }
+    }
+
+    &__label {
+        margin-bottom: rem(20);
+    }
+
+    &__list {
+        li {
+            &:not(:last-child) {
+                margin-bottom: rem(10);
+            }
+        }
+    }
+
+    &__link {
+        color: inherit;
+        transition: all 0.3s ease 0s;
+        @media (any-hover: hover) {
+            &:hover {
+                color: $dark;
+            }
+        }
+    }
+}
