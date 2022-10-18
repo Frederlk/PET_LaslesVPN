@@ -34,10 +34,10 @@ function initSliders() {
                 320: {
                     slidesPerView: 1,
                 },
-                768: {
+                767.98: {
                     slidesPerView: 2,
                 },
-                992: {
+                991.98: {
                     slidesPerView: 2.5,
                 },
             },

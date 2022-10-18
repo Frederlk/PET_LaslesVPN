@@ -51,7 +51,7 @@
 
     &__sign-in {
         color: inherit;
-        transition: all 0.3s ease 0s;
+        transition: color 0.3s ease 0s;
         margin-right: rem(25);
         @media (any-hover: hover) {
             &:hover {
